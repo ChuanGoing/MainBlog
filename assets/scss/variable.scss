@@ -1,0 +1,33 @@
+$primaryColor: #4b82dc;
+$remindColor: #ff4c4c;
+$navColor: #8a9099;
+$borderColor: #e5e5e5;
+
+@mixin scrollbar() {
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-corner {
+    background-color: #f6f6f6;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border-radius: 2px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #f6f6f6;
+    border-radius: 2px;
+  }
+}
+
+@mixin text-truncate($line, $fontSize) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
