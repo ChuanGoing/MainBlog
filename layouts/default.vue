@@ -3,12 +3,14 @@
 
     <Head />
     <nuxt />
+    <Foot />
   </div>
 </template>
 <script>
-import Head from '../components/head'
+import Head from '../components/Head'
+import Foot from '../components/Foot'
 
 export default {
-  components: { Head }
+  components: { Head, Foot }
 }
 </script>
