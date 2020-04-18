@@ -11,14 +11,14 @@
       </div>
       <ul>
         <li
-          v-for="(item,index) in navigate"
+          v-for="(item, index) in navigate"
           :key="index"
         >
           <nuxt-link
-            :class="{active: iscur===index}"
+            :class="{ active: iscur === index }"
             :to="item.value"
             @click.native="page(index)"
-          >{{item.label}}</nuxt-link>
+          >{{ item.label }}</nuxt-link>
         </li>
       </ul>
       <div class="search">
@@ -76,9 +76,9 @@ export default {
       searchContent: '',
       navigate: [
         { label: '首页', value: '/' },
-        { label: '测试数据1', value: '/' },
-        { label: '测试数据2', value: '/' },
-        { label: '测试数据3', value: '/' }
+        { label: '论坛', value: '/' },
+        { label: '问答', value: '/' },
+        { label: '资讯', value: '/' }
       ],
       bindPhone: false,
       isBindMobile: false
@@ -168,7 +168,7 @@ export default {
           color: #4b82d3;
         }
         .nuxt-link-exact-active {
-          color: #4b82d3;
+          color: #545b66;
         }
         .active {
           color: #4b82d3;

@@ -27,7 +27,7 @@
           <div class="phone">
             <div class="phone_input">
               <el-input
-                v-model="user.phone"
+                v-model="user.username"
                 :placeholder="'请输入手机号'"
                 :class="{ 'red-border': phoneInvalid }"
                 @blur="checkPhone()"
@@ -72,8 +72,10 @@ export default {
   data() {
     return {
       user: {
-        phone: '',
-        password: ''
+        username: '',
+        password: '',
+        grant_type: 'password',
+        mode: 'PHONE-PWD'
       },
       phoneInvalid: false,
       phoneInvalidMsg: '',
@@ -106,12 +108,12 @@ export default {
       this.regFlag = true
     },
     checkPhone() {
-      if (!this.user.phone) {
+      if (!this.user.username) {
         this.phoneInvalid = true
         this.phoneInvalidMsg = '请输入手机号码'
         return false
       }
-      if (!/^1[3456789]\d{9}$/.test(this.user.phone)) {
+      if (!/^1[3456789]\d{9}$/.test(this.user.username)) {
         this.phoneInvalid = true
         this.phoneInvalidMsg = '请输入正确的手机号'
         return false
@@ -161,9 +163,11 @@ export default {
         //   `/login`,
         //   transform(this.user)
         // )
-
+        console.log('日志显示')
+        const d1 = await this.$axios.get('/login', transform(this.user))
+        console.log('d1=', d1)
         const data = await this.$axios.post(`/login`, transform(this.user))
-        console.log(data)
+        console.log('data=', data)
       } catch (err) {
         console.log('find err:' + err)
         this.$message.warning(err)

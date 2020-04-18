@@ -2,7 +2,12 @@
 import { Message } from 'element-ui'
 
 export default function ({ $axios, redirect, store, route }) {
-    $axios.onRequest((config) => { })
+    $axios.onRequest((config) => {
+        console.log('request=', config)
+    })
+    $axios.onRequestError((error) => {
+        console.log('onRequestError=', error)
+    })
     $axios.onError((error) => {
         const code = parseInt(error.response && error.response.status)
         if (code === 401) {
