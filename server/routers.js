@@ -2,6 +2,8 @@ const config = require('config')
 const consola = require('consola')
 const Router = require('koa-router')
 const axios = require('axios')
+const https = require("https")
+
 
 const router = new Router()
 
@@ -49,18 +51,13 @@ const router = new Router()
 //     }
 // })
 
-router.get('/login', async (ctx) => {
-    console.log('get ctx.data=', ctx)
-   console.log('querystring=',ctx.querystring)
-    ctx.status = 200
-    ctx.body = 'This is a result'
-
-})
+const agent = new https.Agent({
+    rejectUnauthorized: false
+});
 
 // 登录路由
 router.post('/login', async (ctx) => {
     const param = { client_id: 'Grant.Common', client_secret: 'ClientSecret' }
-    console.log('post ctx.data=', ctx)
     Object.assign(param, ctx.request.body)
     const url = config.get('login_url')
     const paramStr = []
@@ -71,9 +68,7 @@ router.post('/login', async (ctx) => {
     }
     let result
     try {
-        console.log('url=', url)
-        console.log('paramStr=', paramStr)
-        result = await axios.post(url, paramStr.join('&'))
+        result = await axios.post(url, paramStr.join('&'), { httpsAgent: agent })
     } catch (err) {
         consola.error(err.response)
         ctx.status = 400

@@ -159,15 +159,12 @@ export default {
       }
 
       try {
-        // const { data: token } = await this.$axios.post(
-        //   `/login`,
-        //   transform(this.user)
-        // )
-        console.log('日志显示')
-        const d1 = await this.$axios.get('/login', transform(this.user))
-        console.log('d1=', d1)
-        const data = await this.$axios.post(`/login`, transform(this.user))
-        console.log('data=', data)
+        const { data: token } = await this.$axios.post(
+          `/login`,
+          transform(this.user)
+        )
+
+        console.log('token=', token)
       } catch (err) {
         console.log('find err:' + err)
         this.$message.warning(err)

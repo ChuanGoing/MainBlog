@@ -1,5 +1,6 @@
 const http = require('http')
 const Koa = require('koa')
+const bodyParser = require('koa-bodyparser')
 const config = require('config')
 const { Nuxt, Builder } = require('nuxt')
 const consola = require('consola')
@@ -13,7 +14,26 @@ async function start() {
     const port = config.get('port') || 3000
     const server = http.Server(app.callback())
 
+
+    // app.use(async (ctx, next) => {
+    //     ctx.set('Access-Control-Allow-Origin', '*')
+    //     ctx.set(
+    //       'Access-Control-Allow-Headers',
+    //       'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild'
+    //     )
+    //     ctx.set('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS')
+
+    //     if (ctx.method == 'OPTIONS') {
+    //       ctx.body = 200
+    //     } else {
+    //       await next()
+    //     }
+    //   })
+
+    app.use(bodyParser())
     app.use(router.routes())
+
+
 
     // Instantiate nuxt.js
     nuxtConfig.dev = config.util.getEnv('NODE_ENV') === 'development'
