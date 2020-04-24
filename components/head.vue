@@ -40,7 +40,10 @@
         </el-input>
       </div>
       <div class="t_right">
-        <div class="login">
+        <div
+          v-if="!user.isAuthenticated"
+          class="login"
+        >
           <el-button
             @click="login"
             class="pre"
@@ -51,9 +54,28 @@
             type="text"
           >注册</el-button>
         </div>
+        <div
+          v-else
+          class="login"
+        >
+          <div
+            @mousemove="showBar(true)"
+            @mouseleave="showBar(false)"
+            class="bar"
+          >
+            <img
+              :src="user.icon||'/img/avatar.png'"
+              alt="头像"
+            />
+            <owner-bar
+              v-show="isShowBar"
+              class="abs"
+            />
+          </div>
+        </div>
       </div>
       <login-Modal
-        v-show="$store.getters.isLogin"
+        v-show="$store.getters.onLogin"
         @close="showBind"
       />
     </div>
@@ -61,16 +83,18 @@
 </template>
 
 <script>
-import { SET_LOGIN, SET_MODALTYPE } from '~/utils/mutation-types'
-import loginModal from '~/components/login'
+import consola from 'consola'
+import loginModal from '~/components/Login'
+import OwnerBar from '~/components/OwnerBar'
 
 export default {
-  components: { loginModal },
+  components: { loginModal, OwnerBar },
   data() {
     return {
       iscur: '',
       selfdata: 1,
-      show: false,
+      isShowBar: false,
+      user: this.$store.getters.user,
       loginType: '',
       connection: null,
       searchContent: '',
@@ -106,14 +130,21 @@ export default {
       immediate: true
     }
   },
+  beforeMount() {
+    consola.log('beforeMount-user=', this.user)
+    if (this.user.isAuthenticated) {
+      console.log('this.user.token=', this.user.token)
+    }
+  },
   methods: {
     login() {
-      this.$store.commit(SET_LOGIN, true)
-      this.$store.commit(SET_MODALTYPE, 'login')
+      console.log()
+      this.$store.commit('setOnLogin', true)
+      this.$store.commit('setModalType', 'login')
     },
     reg() {
-      this.$store.commit(SET_LOGIN, true)
-      this.$store.commit(SET_MODALTYPE, 'reg')
+      this.$store.commit('setOnLogin', true)
+      this.$store.commit('setModalType', 'reg')
     },
     page(index) {
       this.iscur = index
@@ -121,6 +152,9 @@ export default {
     search() {},
     showBind(val) {
       this.bindPhone = true
+    },
+    showBar(status) {
+      this.isShowBar = status
     }
   }
 }

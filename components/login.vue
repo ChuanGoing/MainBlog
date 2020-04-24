@@ -64,7 +64,6 @@
 
 <script>
 import { mapState } from 'vuex'
-import { SET_LOGIN, SET_MODALTYPE } from '~/utils/mutation-types'
 import { transform } from '~/assets/js/transform'
 
 export default {
@@ -94,7 +93,7 @@ export default {
       },
       set(val) {
         // this.$store.dispatch('setModalType', { var })
-        this.$store.commit(SET_MODALTYPE, val)
+        this.$store.commit('setModalType', val)
       }
     }
   },
@@ -148,7 +147,10 @@ export default {
       this.clearPassword()
     },
     close() {
-      this.$store.commit(SET_LOGIN, false)
+      this.$store.commit('setOnLogin', false)
+    },
+    loginRemember() {
+      window.location.reload()
     },
     async login() {
       if (!this.checkPhone()) {
@@ -163,10 +165,11 @@ export default {
           `/login`,
           transform(this.user)
         )
-
-        console.log('token=', token)
+        this.$store.commit('setLogin', token)
+        this.$store.commit('setOnLogin', false)
+        // this.loginRemember()
       } catch (err) {
-        console.log('find err:' + err)
+        // console.log('find err:' + err)
         this.$message.warning(err)
       }
     }

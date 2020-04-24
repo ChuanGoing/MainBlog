@@ -1,4 +1,10 @@
 module.exports = {
+//   /*
+//  ** Router config
+//  */
+//   router: {
+//     middleware: 'check-auth'
+//   },
   mode: 'universal',
   /*
    ** Headers of the page
