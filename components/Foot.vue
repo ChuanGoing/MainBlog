@@ -4,7 +4,7 @@
       <div class="web">
         <div class="foot_logo">
           <img
-            src="/img/qrcode/share.png"
+            src="/img/foot_logo.png"
             alt
           />
         </div>
@@ -137,6 +137,7 @@ export default {}
       flex-direction: row;
       width: 1275px;
       .foot_logo {
+        height: 2.125em;
         margin-top: 3.125em;
         margin-left: 2em;
         margin-right: 5em;
