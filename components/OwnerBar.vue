@@ -53,7 +53,7 @@ export default {
       display: block;
       // align-items: center;
       // justify-content: center;
-      width: 6.75em;
+      width: 4.75em;
       padding: 0 1em;
       // height: 3em;
       // line-height: 3em;

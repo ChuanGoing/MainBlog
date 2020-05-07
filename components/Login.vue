@@ -187,7 +187,7 @@ export default {
   position: fixed;
   z-index: 3000;
   .modal_main {
-    width: 31.25em;
+    width: 20.375em;
     position: absolute;
     background-color: #fff;
     box-shadow: 0 0 1em #000; /*设置阴影效果:水平 垂直 模糊距离*/
