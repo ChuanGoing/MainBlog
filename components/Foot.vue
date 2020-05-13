@@ -127,7 +127,7 @@ export default {}
 .foot {
   width: 100%;
   bottom: 0px;
-  position: absolute;
+  // position: absolute;
   .top {
     width: 100%;
     border-top: 1px solid #e5e5e5;
