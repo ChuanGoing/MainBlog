@@ -60,6 +60,7 @@ router.post('/login', async (ctx) => {
     const param = { client_id: 'Grant.Common', client_secret: 'ClientSecret' }
     Object.assign(param, ctx.request.body)
     const url = config.get('login_url')
+    consola.info(url)
     const paramStr = []
     for (const key in param) {
         paramStr.push(
