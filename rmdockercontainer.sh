@@ -1,4 +1,4 @@
-vname=mainblog
+vname=$1
 name=$(docker ps|grep $vname|awk -F '[ ]{3,}' 'NR==1 {print $7}')
 
 if [ "$name" != "" ];
