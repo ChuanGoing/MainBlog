@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Banner :banner-list="banners||[]" />
+    <Banner :banner-list="bannerList||[]" />
     <Hot
       :ad-new-list="adNewList||[]"
       :ad-hot-list="adHotList||[]"
@@ -15,18 +15,18 @@ export default {
   components: { Banner, Hot },
   data() {
     return {
-      banners: [
+      bannerList: [
         {
           seqNo: '1',
           id: 1,
-          link: 'www.cnblogs.com',
+          link: 'http://www.cnblogs.com',
           img: '/img/banners/banner1.jpg',
           title: '你来打我呀'
         },
         {
           seqNo: '2',
           id: 2,
-          link: 'www.baidu.com',
+          link: 'https://www.cnblogs.com/ChuanGoing',
           img: '/img/banners/banner2.jpg',
           title: '你不服不行'
         }

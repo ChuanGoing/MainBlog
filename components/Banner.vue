@@ -3,10 +3,11 @@
     <div class="b_img">
       <el-carousel
         height="26.875em"
-        arrow="never"
+        arrow="allways"
+        interval="3000"
       >
         <el-carousel-item
-          v-for="(banner, key) in banners"
+          v-for="(banner, key) in bannerList"
           :key="key"
         >
           <a
@@ -25,7 +26,7 @@
 <script>
 export default {
   props: {
-    banners: { type: Array, default: () => [] }
+    bannerList: { type: Array, default: () => [] }
   },
   data() {
     return {
@@ -53,6 +54,7 @@ export default {
   height: 26.875em;
   position: relative;
   .b_img {
+    width: 100%;
     .banner-link {
       width: 100%;
       height: 26.875em;
@@ -62,6 +64,9 @@ export default {
       background-repeat: no-repeat;
     }
   }
+}
+.el-carousel {
+  width: 100%;
 }
 .el-carousel__indicators {
   z-index: 100;
