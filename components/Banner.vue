@@ -2,9 +2,9 @@
   <div class="banner_c">
     <div class="b_img">
       <el-carousel
+        :interval="5000"
         height="26.875em"
         arrow="allways"
-        interval="3000"
       >
         <el-carousel-item
           v-for="(banner, key) in bannerList"
