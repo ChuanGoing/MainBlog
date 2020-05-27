@@ -161,6 +161,7 @@ export default {
       }
 
       try {
+        console.log('baseurl='+process.env.BASE_URL)
         const { data: token } = await this.$axios.post(
           `/login`,
           transform(this.user)
