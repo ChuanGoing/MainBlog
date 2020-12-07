@@ -101,7 +101,7 @@ export default {
       searchContent: '',
       navigate: [
         { label: '首页', value: '/' },
-        { label: '论坛', value: '/' },
+        { label: '文章', value: '/' },
         { label: '问答', value: '/' },
         { label: '资讯', value: '/' }
       ],

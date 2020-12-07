@@ -28,12 +28,12 @@
                   style="margin-right:4px;"
                   src="/img/wechat.png"
                   alt="微信"
-                />微信<span>：peter1ccb</span>
+                />微信<span>：******</span>
               </div>
               <p><img
                   src="/img/phone.png"
                   alt="电话"
-                />电话<span>：888-888-888</span></p>
+                />电话<span>：******</span></p>
               <p>
                 <img
                   src="/img/mail.png"
@@ -93,7 +93,7 @@
       <div class="web">
         <p>
           <a
-            href="http://www.beian.miit.gov.cn/"
+            href="https://beian.miit.gov.cn/"
             target="_blank"
             class="footer-record"
           >
@@ -107,7 +107,7 @@
         <p>
           所有版权均归 川流不息 所有
           <a
-            href="http://www.beian.miit.gov.cn/"
+            href="https://beian.miit.gov.cn/"
             target="_blank"
             class="footer-cert"
           >
