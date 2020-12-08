@@ -101,9 +101,9 @@ export default {
       searchContent: '',
       navigate: [
         { label: '首页', value: '/' },
+        { label: '精华', value: '/' },
         { label: '文章', value: '/' },
-        { label: '问答', value: '/' },
-        { label: '资讯', value: '/' }
+        { label: '讨论', value: '/' }
       ],
       bindPhone: false,
       isBindMobile: false
@@ -165,14 +165,14 @@ export default {
 @import '~/assets/scss/variable.scss';
 
 .wrap {
-  width: 100%;
+  width: 100%;  
   .top {
     width: 75em;
     height: 4.375em;
-    margin: 0 auto;
+    margin: 0 auto;    
     .img {
       float: left;
-      margin-right: 3.125em;
+      margin-right: 0.125em;
       height: 100%;
       a {
         display: inline-flex;
@@ -181,7 +181,7 @@ export default {
         height: 100%;
         box-sizing: border-box;
         img {
-          height: 2.875em;
+          height: 4.375em;
           width: auto;
           display: block;
         }

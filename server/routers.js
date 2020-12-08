@@ -12,7 +12,7 @@ const agent = new https.Agent({
 });
 
 // 登录路由
-router.post('/login', async (ctx) => {
+router.post('/login', async (ctx) => {    
     const param = { client_id: 'Grant.Common', client_secret: 'ClientSecret' }
     Object.assign(param, ctx.request.body)
     const url = config.get('login_url')
@@ -27,7 +27,7 @@ router.post('/login', async (ctx) => {
     try {
         result = await axios.post(url, paramStr.join('&'), { httpsAgent: agent })
     } catch (err) {
-        consola.error(err.response)
+        consola.error(err)
         ctx.status = 400
         if (err.response) {
             ctx.body = err.response.data
