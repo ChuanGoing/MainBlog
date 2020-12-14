@@ -19,14 +19,14 @@ export default {
         {
           seqNo: '1',
           id: 1,
-          link: 'http://www.cnblogs.com',
+          link: '/',
           img: '/img/banners/banner1.jpg',
           title: '你来打我呀'
         },
         {
           seqNo: '2',
           id: 2,
-          link: 'https://www.cnblogs.com/ChuanGoing',
+          link: '/',
           img: '/img/banners/banner2.jpg',
           title: '你不服不行'
         }
