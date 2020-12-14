@@ -93,7 +93,7 @@
       <div class="web">
         <p>
           <a
-            href="https://beian.miit.gov.cn/"
+            href="https://beian.miit.gov.cn"
             target="_blank"
             class="footer-record"
           >
@@ -107,7 +107,7 @@
         <p>
           所有版权均归 川流不息 所有
           <a
-            href="https://beian.miit.gov.cn/"
+            href="https://beian.miit.gov.cn/#/Integrated/recordQuery"
             target="_blank"
             class="footer-cert"
           >
