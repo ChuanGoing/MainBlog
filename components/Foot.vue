@@ -101,7 +101,7 @@
               src="/img/record-icon.png"
               alt=""
             />
-            <p>沪ICP备2021001447</p>
+            <p>沪ICP备2021001447号</p>
           </a>
         </p>
         <p>
@@ -111,7 +111,7 @@
             target="_blank"
             class="footer-cert"
           >
-            沪ICP备2021001447-1
+            沪ICP备2021001447号-1
           </a>
         </p>
       </div>
